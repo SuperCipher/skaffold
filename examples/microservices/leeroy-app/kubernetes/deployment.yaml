@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: leeroy-app
-        image: leeroy-app
+        image: xcindall/leeroy-app:ca8c97a95e9cf38938953386c98d5ae8c019ec376e44ce304d46b4d0eeef9d42
         ports:
         - containerPort: 50051
           name: http

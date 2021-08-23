@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: leeroy-web
-          image: leeroy-web
+          image: xcindall/leeroy-web:3ee7afe8706f8381c0b8406ca7ac0ed940c2915b0764f0446754be988e7c6b31
           ports:
             - containerPort: 8080
