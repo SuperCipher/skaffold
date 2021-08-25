@@ -5,6 +5,8 @@ build:
     sha256: {}
   artifacts:
   - image: skaffold-helm
+  local:
+    push: true
 deploy:
   helm:
     releases:
