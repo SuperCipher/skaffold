@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hooks-example-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hooks
+  template:
+    metadata:
+      labels:
+        app: hooks
+    spec:
+      containers:
+      - name: hooks-example
+        image: registry.digitalocean.com/biggestfan/social-tag/social-tag-service:latest
+        env:
+            - name: PGDBNAME
+              value: social_tag_service
+            - name: PGHOST
+              value: social-tag-db
+            - name: PGPASSWORD
+              value: example-password
+            - name: PGPORT
+              value: "5432"
+            - name: PGUSER
+              value: biggest
+      imagePullSecrets:
+      - name: biggestfan-registry

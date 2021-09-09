@@ -36,7 +36,8 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      - deployment.yaml
+      - db-deployment.yaml
+      - migrate-deployment.yaml
     # hooks:
     #   before:
     #     - host:

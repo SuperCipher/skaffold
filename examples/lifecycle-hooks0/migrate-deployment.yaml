@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: social-tag-migrate-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: social-tag-migrate
+  template:
+    metadata:
+      labels:
+        app: social-tag-migrate
+    spec:
+      containers:
+      - name: social-tag-migrate
+        image: social-tag/social-tag-migrate:latest
+        env:
+          - name: PGDBNAME
+            value: social_tag_service
+          - name: PGHOST
+            value: social-tag-db
+          - name: PGPASSWORD
+            value: example-password
+          - name: PGUSER
+            value: biggest
+          - name: SCHEMA_PATH
+            value: /usr/src/schema
+          - name: TORMOR_CONF
+            value: /usr/src/schema/migrations.txt
+          - name: TORMOR_FIXTURES_CONF
+            value: /usr/src/schema/fixtures.txt
+      imagePullSecrets:
+      - name: biggestfan-registry
