@@ -1,18 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hooks-example-deployment
+  name: postgres-deployment
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hooks
+      app: postgres
   template:
     metadata:
       labels:
-        app: hooks
+        app: postgres
     spec:
       containers:
-      - image: postgres:13
-        name: hooks-example
+      - env:
+        - name: POSTGRES_PASSWORD
+          value: example-password
+        image: registry.digitalocean.com/biggestfan/ticket_postgres
+        name: postgres

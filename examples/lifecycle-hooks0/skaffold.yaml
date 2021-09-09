@@ -2,7 +2,7 @@ apiVersion: skaffold/v2beta21
 kind: Config
 # build:
 #   artifacts:
-#   - image: postgres:13
+#   - image: ticket/postgres
     # hooks:
     #   before:
     #     - command: ["sh", "-c", "./hook.sh"]
@@ -37,7 +37,7 @@ deploy:
   kubectl:
     manifests:
       - db-deployment.yaml
-      - migrate-deployment.yaml
+      # - migrate-deployment.yaml
     # hooks:
     #   before:
     #     - host:
