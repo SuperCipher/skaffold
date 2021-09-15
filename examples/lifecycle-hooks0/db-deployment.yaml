@@ -18,3 +18,5 @@ spec:
         env:
           - name: POSTGRES_PASSWORD
             value: example-password
+      imagePullSecrets:
+      - name: biggestfan-registry

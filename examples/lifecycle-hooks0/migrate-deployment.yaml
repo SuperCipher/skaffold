@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: social-tag-migrate
-        image: social-tag/social-tag-migrate:latest
+        image: social-tag/social-tag-migrate
         env:
           - name: PGDBNAME
             value: social_tag_service

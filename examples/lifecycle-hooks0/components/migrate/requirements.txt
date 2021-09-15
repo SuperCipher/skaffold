@@ -1,0 +1,3 @@
+mod-ngarn==3.5
+tormor==2.5
+asyncpg==0.17.0
